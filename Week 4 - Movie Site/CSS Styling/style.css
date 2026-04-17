@@ -1,0 +1,135 @@
+body{
+    background-color: dimgray;
+}
+
+@keyframes headerAnimiation{
+  0% {color: black;}
+  50% {color: white;}
+  100% {color: black;}
+
+}
+
+#homepage-link{
+    color: blue;
+}
+#homepage-link:hover{
+    animation: headerAnimiation 4s infinite;
+}
+a {
+    text-decoration: none;
+}
+#header{
+    /*center*/
+    text-align: center;
+
+    /*border*/
+    border-width: 4px;
+    border-style: double;
+    border-color: blueviolet;
+    width: 35%;
+    margin: 0 auto;
+}
+
+.title-page-poster{
+    width: 250px;
+    height: auto;
+}
+
+.title-page-poster:hover{
+    border: solid red;
+}
+
+#specific-movie-poster{
+    text-align: center;
+}
+
+#image-size{
+    height: 900px;
+    width: auto;
+}
+
+#nav{
+    /*center*/
+    text-align: center;
+
+    /*border*/
+    border-width: 4px;
+    border-style: double;
+    border-color: black;
+    width: 40%;
+
+    margin: 0 auto;
+}
+
+#cast{
+    font-size: 25px;
+
+    /*smaller border*/
+    border-width: 2px;
+    border-style: dashed;
+    border-color: green;
+    width: 35%;
+
+    margin: 0 auto;
+}
+
+#review{
+    font-size: 25px;
+
+    /*smaller border*/
+    border-width: 2px;
+    border-style: dashed;
+    border-color: green;
+    width: 35%;
+
+    margin: 0 auto;
+}
+
+#back-to-top{
+    font-size: 25px;
+
+    /*smaller border*/
+    border-width: 2px;
+    border-style: dashed;
+    border-color: green;
+    width: 35%;
+
+    margin: 0 auto;
+}
+
+.nav-bar:hover{
+    background-color: crimson;
+    cursor: pointer;
+}
+
+.nav-bar{
+    font-size: 25px;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: green;
+    width: 15%;
+}
+
+/*I don't like the default colors of links, so...*/
+a:link{
+    color:blue;
+}
+a:visited{
+color: blue
+}
+a:hover{
+    color: rgb(241, 240, 240);
+}
+a:active{
+    color:red;
+}
+
+#info{
+    size: 30px;
+    width: 500px;
+    margin:  0 auto;
+}
+
+#genres{
+    font-size: 20px;
+}
