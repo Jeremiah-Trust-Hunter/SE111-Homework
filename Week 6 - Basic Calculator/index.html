@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 - Basic Calculator</title>
+</head>
+<body>
+
+    <style>
+
+        body{
+            background-color: lightpink;
+            text-align: center;
+        }
+
+        h1{
+            display: inline-block;
+            border: 2px dashed yellow;
+            padding: 4px 8px;
+            margin: auto;
+        }
+
+        a:link{
+            color: blue;
+        }
+        a:visited{
+            color: blue;
+        }
+        a:hover{
+            color: green;
+        }
+        a:active{
+            color: red;
+        }
+
+    </style>
+
+
+    <h1>Basic Calculator</h1>
+
+
+    <script>
+
+        function addition(number1, number2)
+        {
+            return number1 + number2;
+        }
+
+        function subtraction(number1, number2)
+        {
+            return number1 - number2;
+        }
+
+        function multiplication(number1, number2)
+        {
+            return number1 * number2;
+        }
+
+        function division(number1, number2)
+        {
+            return number1 / number2;
+        }
+
+
+
+        var type_of_operation = ""
+
+        while (type_of_operation != "+" && type_of_operation != "-" && type_of_operation != "*" && type_of_operation != "/"){
+
+            type_of_operation = prompt('What type of operation would you like to perform?\n(please type +, -, *, or /)');
+
+            if (type_of_operation != "+" && type_of_operation != "-" && type_of_operation != "*" && type_of_operation != "/"){
+                alert("Error.  Please type one of the following characters:\n+ - * /")
+            }
+            
+        }
+
+
+        console.log("Type of operation: "+ type_of_operation)
+
+
+        var num1 = Number(prompt("Type the first number."))
+        console.log("First number: " + num1)
+
+        var num2 = Number(prompt("Type the second number."))
+        console.log("Second number: " + num2)
+
+        alert('Click "OK" to see your answer.')
+
+
+        if (type_of_operation === "+")
+        {
+            answer = addition(num1, num2)
+        }
+        else if (type_of_operation === "-")
+        {
+            answer = subtraction(num1, num2)
+        }
+        else if (type_of_operation === "*")
+        {
+            answer = multiplication(num1, num2)
+        }
+        else if (type_of_operation === "/")
+        {
+            answer = division(num1, num2)
+        }
+
+
+        alert("Your answer is:\n" + answer)
+        console.log("Answer: ", answer)
+
+
+    </script>
+
+    <p>Click <a href="index.html">here</a> to perform another operation.</p>
+
+
+</body>
+</html>
