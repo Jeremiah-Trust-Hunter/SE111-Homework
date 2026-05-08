@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 Extra Credit - JavaScript Pay Calculator</title>
+</head>
+<body>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        h2{
+            margin-left: 42.5%;
+        }
+
+        h3{
+            margin-left: 40%;
+        }
+
+        input{
+            justify-content: center;
+        }
+
+        #container{
+            text-align: center;
+        }
+
+        #border-tag{
+            border: 2px dashed green;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+    
+    <h1>JavaScript Pay Calculator</h1>
+
+    <br>
+
+    <div id="container">
+        <input type="button" id="start" value="Start Calculator!">
+    </div>
+
+    <h2 id="results"></h2>
+
+    <h3 id="result1"></h3>
+    <h3 id="result2"></h3>
+    <h3 id="result3"></h3>
+
+
+
+
+
+
+    <script>
+
+        var number_of_runs = 0
+
+        var button = document.querySelector("#start")
+        button.addEventListener("click", runCode)
+
+
+        function runCode(hourly_pay, hours_worked, weeks, tax_rate, gross_pay, total_tax, net_pay)
+        {
+
+            var hourly_pay = Number(prompt("How much money do you make per hour?\nPlease enter just the number (e.g. $14.50 --> 14.50)."))
+            console.log("Hourly pay: $" + hourly_pay.toFixed(2))
+
+            var hours_worked = Number(prompt("How many hours do you work per week?"))
+            console.log("Hours worked: " + hours_worked)
+
+            var weeks = Number(prompt("How many weeks would you like to measure for?"))
+            console.log("Weeks: " + weeks.toFixed(0))
+
+            var tax_rate = Number(prompt("What is your tax rate?\nEnter as a decimal (e.g. 20% --> 0.20)."))
+            console.log("Tax rate: " + (tax_rate * 100) + "%")
+
+            console.log("")
+            // Calculations
+
+            var gross_pay = hourly_pay * hours_worked * weeks
+            console.log("User gross pay: $" + gross_pay.toFixed(2))
+
+            var total_tax = gross_pay * tax_rate
+            console.log("Taxes: $" + total_tax.toFixed(2))
+
+            var net_pay = gross_pay - total_tax
+            console.log("User net pay: $" + net_pay.toFixed(2))
+
+
+
+
+
+
+            alert("Press OK to see your results.")
+
+            alert("Gross pay: $" + gross_pay.toFixed(2) + "\n" + "Uncle Sam's Share: $" + total_tax.toFixed(2) + "\n" + "Net Pay: $" + net_pay.toFixed(2))
+
+            if (number_of_runs < 1) {
+                results.innerHTML = "Results"
+            }
+            else if (number_of_runs >= 1) {
+                results.innerHTML = "Most Recent Results"
+            }
+            
+            result1.innerHTML = "Gross Pay: <span style='color:red'><u>$" + gross_pay.toFixed(2) + "</u></span>"
+            result2.innerHTML = "Uncle Sam's Share: <span style='color:red'><u>$" + total_tax.toFixed(2) + "</u></span>"
+            result3.innerHTML = "<span id='border-tag'>Net Pay: <span style='color:red'><u>$" + net_pay.toFixed(2) + "</u></span></span>"
+
+            container.innerHTML = "<input type='button' id='start' value='Run Again'>"
+            var button = document.querySelector("#start")
+            button.addEventListener("click", runCode)
+
+            number_of_runs ++
+            console.log("")
+
+            if (number_of_runs > 1) {
+                console.log("Calculator has run " + number_of_runs + " times.")
+            }
+            else if (number_of_runs <= 1) {
+                console.log("Calculator has run " + number_of_runs + " time.")
+            }
+
+            
+            console.log("")
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
