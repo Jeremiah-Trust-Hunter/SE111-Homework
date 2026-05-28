@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Week 2 Files</title>
+	<style type="text/css">
+		.border {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1 id="title">Week 9 | Creating Elements</h1>
+	<input type="button" id="click-button" value="Click Me!">
+</body>
+
+<script type="text/javascript">
+
+	var runTheFunction = document.querySelector("#click-button")
+	runTheFunction.addEventListener("click", runBothFunctions)
+
+	function runBothFunctions() {
+		removeTheOtherStuff()
+		thisIsAVeryLongFunction()
+	}
+
+	function removeTheOtherStuff() {
+		var firstThingToRemove = document.querySelector("#title")
+		var secondThingToRemove = document.querySelector("#click-button")
+		var body = document.querySelector("body")
+		body.removeChild(firstThingToRemove)
+		body.removeChild(secondThingToRemove)
+	}
+
+	function thisIsAVeryLongFunction() {
+
+
+
+		//Use this Array of objects to complete the assignment.
+		var people = [
+			{ first: "Jason", last: "Vorhees", credit: "Friday the 13th" },
+			{ first: "Freddy", last: "Krueger", credit: "A Nightmare on Elm Street" },
+			{ first: "Roger", last: "Rabbit", credit: "Who Framed Roger Rabbit" },
+			{ first: "Kevin", last: "McCallister", credit: "Home Alone" },
+			{ first: "Godzilla", last: "King of The Monsters", credit: "Godzilla" },
+			{ first: "Buzz", last: "Lightyear", credit: "Toy Story" },
+			{ first: "Marion", last: "Cobretti", credit: "Cobra" }
+		]
+
+
+
+		var body = document.querySelector("body")
+
+
+
+		for (let i = 0; i < people.length; i++) {
+
+			var tempDiv = document.createElement("div")
+
+			tempDiv.setAttribute("id", String[i])
+
+			tempDiv.setAttribute("class", "border")
+
+
+
+			for (let key in people[i]) {
+
+				var individual_p_tag = document.createElement("p")
+
+				individual_p_tag.innerHTML = people[i][key]
+
+				tempDiv.appendChild(individual_p_tag)
+
+			}
+
+
+
+			body.appendChild(tempDiv)
+
+		}
+
+	}
+
+
+</script>
+
+</html>
